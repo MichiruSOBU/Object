@@ -69,3 +69,8 @@ for i=1:cv
   accuracy = [accuracy ac]
 end
 fprintf('accuracy: %f\n',mean(accuracy))
+  % 降順 ('descent') でソートして，ソートした値とソートインデックスを取得します．
+  [sorted_score,sorted_idx] = sort(score(:,2),'descend');
+for i=1:numel(sorted_idx)
+  fprintf('%s %f\n',list{sorted_idx(i)},sorted_score(i));
+end
